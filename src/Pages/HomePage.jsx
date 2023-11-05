@@ -97,6 +97,10 @@ const HomePage = () => {
     };
   }
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Box sx={{ display: "inline-block", width: "100%" }}>
       <Container>
@@ -159,9 +163,10 @@ const HomePage = () => {
               >
                 <Button
                   variant="contained"
-                  onClick={() =>
-                    dispatch(setTrendingMoviePageNo(trendingMoviePageNo - 1))
-                  }
+                  onClick={() => {
+                    dispatch(setTrendingMoviePageNo(trendingMoviePageNo - 1));
+                    scrollToTop();
+                  }}
                   disabled={trendingMoviePageNo === 1}
                 >
                   Previous Page
@@ -169,9 +174,10 @@ const HomePage = () => {
 
                 <Button
                   variant="contained"
-                  onClick={() =>
-                    dispatch(setTrendingMoviePageNo(trendingMoviePageNo + 1))
-                  }
+                  onClick={() => {
+                    dispatch(setTrendingMoviePageNo(trendingMoviePageNo + 1));
+                    scrollToTop();
+                  }}
                   disabled={totalTrendingMoviesPages === trendingMoviePageNo}
                 >
                   Next Page
@@ -207,9 +213,10 @@ const HomePage = () => {
               >
                 <Button
                   variant="contained"
-                  onClick={() =>
-                    dispatch(setPopularMoviePageNo(popularMoviePageNo - 1))
-                  }
+                  onClick={() => {
+                    dispatch(setPopularMoviePageNo(popularMoviePageNo - 1));
+                    scrollToTop();
+                  }}
                   disabled={popularMoviePageNo === 1}
                 >
                   Previous Page
@@ -217,9 +224,10 @@ const HomePage = () => {
 
                 <Button
                   variant="contained"
-                  onClick={() =>
-                    dispatch(setPopularMoviePageNo(popularMoviePageNo + 1))
-                  }
+                  onClick={() => {
+                    dispatch(setPopularMoviePageNo(popularMoviePageNo + 1));
+                    scrollToTop();
+                  }}
                   disabled={totalPopularMoviesPages === popularMoviePageNo}
                 >
                   Next Page
